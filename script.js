@@ -28,6 +28,7 @@ async function itemList(event) {
   const { id, title, price } = itemId;
   const item = document.querySelector('.cart__items');
   item.appendChild(createCartItemElement({ sku: id, name: title, salePrice: price }));
+
   saveCartItems(ol.innerHTML);
   } 
 
