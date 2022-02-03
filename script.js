@@ -82,9 +82,9 @@ function buttonClearCart() {
   const list = document.querySelector('ol');
   const buttonClear = document.querySelector('.empty-cart');
  buttonClear.addEventListener('click', function () {
-      list.innerHTML = '';
-      localStorage.clear();
-  });
+   list.innerHTML = '';
+   localStorage.clear();
+});
 }
 
  window.onload = () => {
