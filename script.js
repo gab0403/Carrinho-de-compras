@@ -3,7 +3,7 @@
 fetchProducts('computador').then(console.log);
 
  function cartItemClickListener(event) {
-  // requisito 3
+  event.target.parentElement.removeChild(event.target);
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
