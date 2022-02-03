@@ -1,14 +1,10 @@
 // const { fetchProducts } = require('./helpers/fetchProducts');
 
-// const { fetchItem } = require("./helpers/fetchItem");
-
-// const { fetchItem } = require('./helpers/fetchItem');
-
 fetchProducts('computador').then(console.log);
 
-/* function cartItemClickListener(event) {
+ function cartItemClickListener(event) {
   // requisito 3
-} */
+}
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
@@ -61,9 +57,9 @@ async function productList() {
   });
   } 
 
-  /* function getSkuFromProductItem(item) {
+   function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
-} */
+} 
 
  window.onload = () => {
   productList();
