@@ -8,6 +8,7 @@ fetchProducts('computador').then(console.log);
 
 const ol = document.querySelector('ol');
 
+// Requisito 3.
  function cartItemClickListener(event) {
   event.target.parentElement.removeChild(event.target);
   saveCartItems(ol.innerHTML);
@@ -65,9 +66,11 @@ async function productList() {
   });
   } 
 
-   function getSkuFromProductItem(item) {
+function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 } 
+
+// Requisito 4.
 function addEvent() {
   const allCartItems = [...document.querySelector('ol').children];
   allCartItems.forEach((element) => element.addEventListener('click', cartItemClickListener));
