@@ -57,6 +57,7 @@ function createProductItemElement({ sku, name, image }) {
   section.appendChild(button);
   return section;
 }
+
 // Requisito 1.
 async function productList() {
   const items = document.querySelector('.items');
@@ -87,8 +88,27 @@ function buttonClearCart() {
 });
 }
 
+function loadingPage() {
+    const div = document.getElementById('loadingAPI');
+    const h1 = document.createElement('h1');
+    const newText = document.createTextNode('Carregando...');
+    h1.appendChild(newText);
+    h1.classList.add('loading');
+    div.appendChild(h1);
+   console.log(h1);
+}
+
+function removeLoading() {
+  setTimeout(function () {
+    const h1 = document.querySelector('h1');
+    h1.remove();
+    productList();
+    }, 2000);
+}
+
  window.onload = () => {
-  productList();
+  loadingPage();
+  removeLoading();
   getSavedCartItems();
   addEvent();
   buttonClearCart();
