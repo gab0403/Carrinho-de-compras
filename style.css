@@ -155,3 +155,8 @@ body {
   color: gray;
   font-size: x-large;
 }
+
+#sum {
+  display: flex;
+  margin-bottom: 15px;
+}

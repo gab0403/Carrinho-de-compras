@@ -8,10 +8,24 @@ fetchProducts('computador').then(console.log);
 
 const ol = document.querySelector('ol');
 
+// Requisito 5.
+function totalPrice() {
+  const cartItems = document.getElementsByClassName('cart__items')[0];
+  const total = document.getElementsByClassName('total-price')[0];
+  const prices = cartItems.childNodes;
+  let sum = 0;
+  prices.forEach((element) => {
+    const price = element.innerHTML.split('PRICE: $');
+    sum += parseFloat(price[1]);
+  });
+  total.innerHTML = sum;
+}
+
 // Requisito 3.
  function cartItemClickListener(event) {
   event.target.parentElement.removeChild(event.target);
   saveCartItems(ol.innerHTML);
+  totalPrice();
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
@@ -21,6 +35,7 @@ function createCartItemElement({ sku, name, salePrice }) {
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
+
 // Requisito 2.
 async function itemList(event) {
   const element = event.target.parentNode.firstChild.innerText;
@@ -30,8 +45,9 @@ async function itemList(event) {
   item.appendChild(createCartItemElement({ sku: id, name: title, salePrice: price }));
 
   saveCartItems(ol.innerHTML);
+  totalPrice();
   } 
-
+ 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -65,6 +81,7 @@ async function productList() {
   const { results } = data;
   return results.forEach(({ id, title, thumbnail }) => {
   items.appendChild(createProductItemElement({ sku: id, name: title, image: thumbnail }));
+  totalPrice();  
   });
   } 
 
@@ -76,6 +93,7 @@ function getSkuFromProductItem(item) {
 function addEvent() {
   const allCartItems = [...document.querySelector('ol').children];
   allCartItems.forEach((element) => element.addEventListener('click', cartItemClickListener));
+  totalPrice();
 }
 
 // Requisito 6.
@@ -85,6 +103,7 @@ function buttonClearCart() {
  buttonClear.addEventListener('click', function () {
    list.innerHTML = '';
    localStorage.clear();
+   totalPrice();
 });
 }
 
@@ -96,7 +115,6 @@ function loadingPage() {
     h1.appendChild(newText);
     h1.classList.add('loading');
     div.appendChild(h1);
-   console.log(h1);
 }
 
 // Requisito 7.
@@ -114,4 +132,5 @@ function removeLoading() {
   getSavedCartItems();
   addEvent();
   buttonClearCart();
+  totalPrice();
  };
