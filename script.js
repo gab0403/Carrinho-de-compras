@@ -88,6 +88,7 @@ function buttonClearCart() {
 });
 }
 
+// Requisito 7.
 function loadingPage() {
     const div = document.getElementById('loadingAPI');
     const h1 = document.createElement('h1');
@@ -98,6 +99,7 @@ function loadingPage() {
    console.log(h1);
 }
 
+// Requisito 7.
 function removeLoading() {
   setTimeout(function () {
     const h1 = document.querySelector('h1');
