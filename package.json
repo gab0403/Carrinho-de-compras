@@ -1,7 +1,7 @@
 {
-  "name": "sd-0x-project-shopping-cart",
+  "name": "carrinho-de-compras",
   "version": "1.0.0",
-  "description": "Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀",
+  "description": "Essa aplicação é uma lojinha de compras",
   "main": "script.js",
   "scripts": {
     "test": "jest",
@@ -26,14 +26,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/betrybe/sd-0x-project-shopping-cart.git"
+    "url": "git@github.com:gab0403/carrinho-de-compras.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/betrybe/sd-0x-project-shopping-cart/issues"
-  },
-  "homepage": "https://github.com/betrybe/sd-0x-project-shopping-cart#readme",
+  
   "dependencies": {
     "cypress": "4.3.0",
     "cypress-multi-reporters": "1.2.4",
